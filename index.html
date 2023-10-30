@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Checkboxes em AngularJS 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body ng-controller="MyController">
+    <div class="container">
+      <div class="hr-line-curve">
+        <img class="" src="assets/img/hr-circle-line.png" alt="circle-line" />
+      </div>
+      <div class="list-nested">
+        <div class="list">
+          <ul>
+            <li ng-repeat="parent in parents">
+              <input
+                type="checkbox"
+                ng-model="parent.checked"
+                ng-change="checkChildren(parent)"
+              />
+              <span ng-show="!parent.editing">{{ parent.name }}</span>
+              <input ng-show="parent.editing" ng-model="parent.editedName" />
+              <button ng-click="addNewChild(parent)" class="sei new-save">
+                Novo item
+              </button>
+              <button
+                ng-click="editParent(parent)"
+                ng-show="!parent.editing"
+                class="sei edit-sei"
+              >
+                Editar
+              </button>
+              <button
+                ng-click="deleteParent(parent)"
+                ng-show="!parent.editing"
+                class="sei delete-sei"
+              >
+                Excluir
+              </button>
+              <button
+                ng-click="saveParent(parent)"
+                ng-show="parent.editing"
+                class=""
+              >
+                Salvar
+              </button>
+              <ul>
+                <li ng-repeat="child in parent.children">
+                  <input
+                    type="checkbox"
+                    ng-model="child.checked"
+                    ng-change="checkParent(parent, child)"
+                  />
+                  <span ng-show="!child.editing">{{ child.name }}</span>
+                  <input ng-show="child.editing" ng-model="child.editedName" />
+                  <button ng-click="addNewSubChild(child)" class="sei new-save">
+                    Novo sub-item
+                  </button>
+                  <button
+                    ng-click="editChild(child)"
+                    ng-show="!child.editing"
+                    class="sei edit-sei"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    ng-click="deleteChild(parent, child)"
+                    ng-show="!child.editing"
+                    class="sei delete-sei"
+                  >
+                    Excluir
+                  </button>
+                  <button
+                    ng-click="saveChild(child)"
+                    ng-show="child.editing"
+                    class="sei new-save"
+                  >
+                    Salvar
+                  </button>
+                  <ul>
+                    <li ng-repeat="subChild in child.children">
+                      <input type="checkbox" ng-model="subChild.checked" />
+                      <span ng-show="!subChild.editing"
+                        >{{ subChild.name }}</span
+                      >
+                      <input
+                        ng-show="subChild.editing"
+                        ng-model="subChild.editedName"
+                      />
+                      <button
+                        ng-click="editSubChild(subChild)"
+                        ng-show="!subChild.editing"
+                        class="sei edit-sei"
+                      >
+                        Editar
+                      </button>
+                      <button
+                        ng-click="deleteSubChild(child, subChild)"
+                        ng-show="!subChild.editing"
+                        class="sei delete-sei"
+                      >
+                        Excluir
+                      </button>
+                      <button
+                        ng-click="saveSubChild(subChild)"
+                        ng-show="subChild.editing"
+                        class="sei new-save"
+                      >
+                        Save
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="icon-circle">
+        <img src="assets/img/circle.svg" alt="circle" />
+      </div>
+      <div class="icon-circle-two">
+        <img src="assets/img/circle-two.svg" alt="circle" />
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
