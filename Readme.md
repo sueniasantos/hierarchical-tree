@@ -14,9 +14,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚧 Características:
 
-- Lista de tarefas hierárquica com tarefas pai e filho.
-- Capacidade de editar nomes de tarefas.
-- Capacidade de marcar tarefas como concluídas.
+- Lista de itens hierárquicos com item pai e filho.
+- Capacidade de incluir, salvar, editar e excluir itens.
 - Interface de usuário simples e limpa.
 - Os dados são salvos automaticamente no armazenamento local.
 
