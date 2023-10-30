@@ -10,7 +10,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🌍 Acesse o site:
 
-- [https://devnews.birobirobiro.dev](https://devnews.birobirobiro.dev)
+- [https://hierarchical-tree.netlify.app/]
 
 ## 🚧 Características:
 
