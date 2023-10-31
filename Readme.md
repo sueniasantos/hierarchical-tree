@@ -14,7 +14,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚧 Características:
 
-- Lista de itens hierárquicos com item pai e filho.
+- Lista de itens hierárquicos
 - Capacidade de incluir, salvar, editar e excluir itens.
 - Interface de usuário simples e limpa.
 - Os dados são salvos automaticamente no armazenamento local.
